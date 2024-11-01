@@ -23,13 +23,13 @@ jobs:
         uses: NuGet/setup-nuget@v1.0.5
 
       - name: Restore NuGet packages
-        run: dotnet restore CCSLab3WebService.sln
+        run: dotnet restore ../../CCSLab3WebService.sln
 
       - name: Clean previous builds
-        run: dotnet clean CCSLab3WebService.sln
+        run: dotnet clean ../../CCSLab3WebService.sln
 
       - name: Build
-        run: dotnet build CCSLab3WebService.sln
+        run: dotnet build ../../CCSLab3WebService.sln
 
       - name: Publish to folder
         run: msbuild /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\"
